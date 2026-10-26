@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dossier A.N.A.N.A.S</title>
+
+    <link rel="stylesheet" href="accueil.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>DOSSIER A.N.A.N.A.S</h1>
+
+        <p>
+            Agence Nationale d'Analyse des Notes et Archives Secrètes
+        </p>
+
+        <p>
+            Projet secret - Accès enquêteur
+        </p>
+    </header>
+
+
+    <main>
+
+        <section class="dossier">
+
+            <h2>Bienvenue, enquêtrice.</h2>
+
+            <p>
+                Une nouvelle enquête vous a été confiée.
+                Plusieurs informations restent actuellement classifiées.
+            </p>
+
+            <p>
+                Votre mission commence maintenant.
+                Résolvez les différentes étapes de l'enquête afin de découvrir la vérité cachée derrière ce dossier.
+            </p>
+
+
+            <div class="informations">
+
+                <h3>Informations du dossier</h3>
+
+                <p>
+                    <strong>Statut :</strong> ENQUÊTE EN COURS
+                </p>
+
+                <p>
+                    <strong>Dossier actuel :</strong> 001
+                </p>
+
+                <p>
+                    <strong>Niveau d'accès :</strong> Niveau 1 - En attente d'activation
+                </p>
+
+            </div>
+
+        </section>
+
+		<section class="aides">
+		<h2> Aides de la voyageuse </h2>
+		<h3> Ton amie précieuse pour cette aventure</h3>
+		
+		<p> "Je suis là pour t'accompagner dans la résolution de ton enquête en voyageant en même temps que toi entre chaque énigme, mais jamais je ne résoudrais à ta place une énigme. <br>
+		La Gardienne t'a choisi pour que tu ressoudes les énigmes seule et avec mon aide. <br> 
+		Bonne chance et je suis là si besoin, de deux façons différentes : aides simples : je te donne 1 indice sans te donner la réponse, aides logique : je te donne 1 indice de logique. <br> 
+		Les indices logiques ne peuvent pas être lus sans avoir débloqué les indices simples"</p>
+		</section>
+
+
+        <section class="archives">
+
+            <h2>Archives A.N.A.N.A.S</h2>
+
+
+            <label for="reponseMission1">
+                mot de réponse (4 à 20 caractères en MAJUSCULES)&nbsp;:
+            </label>
+
+            <input
+                type="text"
+                id="reponseMission1"
+                name="reponse"
+                required
+                minlength="4"
+                maxlength="20"
+                size="10"
+            />
+
+
+            <div class="archive ouverte">
+
+                <button id="btnMission1">Valider</button>
+
+                <p id="messageMission1"></p>
+
+                <p>
+                    Statut : 🔒 Accès refusé
+                </p>
+
+            </div>
+
+
+            <div class="archive verrouille">
+
+                🔒 Dossier 002
+
+                <p>
+                    <a href="#">Statut : Accès refusé</a>
+                </p>
+
+            </div>
+
+
+            <div class="archive verrouille">
+
+                🔒 Dossier 003
+
+                <p>
+                    <a href="#">Statut : Accès refusé</a>
+                </p>
+
+            </div>
+
+
+            <div class="archive verrouille">
+
+                🔒 Archives secrètes
+
+                <p>
+                    Statut : Niveau d'autorisation insuffisant
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="progression">
+
+            <h3>Progression de l'enquête</h3>
+
+            <progress id="progression" max="100" value="0">
+                0%
+            </progress>
+
+            <p>
+                0 % terminé
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © Dossier confidentiel A.N.A.N.A.S
+        </p>
+
+    </footer>
+
+
+    <script src="script_v4.js"></script>
+
+</body>
+
+</html>

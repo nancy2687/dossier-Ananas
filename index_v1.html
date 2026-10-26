@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dossier A.N.A.N.A.S</title>
+
+    <link rel="stylesheet" href="accueil.css">
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>DOSSIER A.N.A.N.A.S</h1>
+
+        <p>
+            Agence Nationale d'Analyse des Notes et Archives Secrètes
+        </p>
+
+        <p>
+            Projet secret - Accès enquêteur
+        </p>
+
+    </header>
+
+
+
+    <main>
+
+
+        <section class="dossier">
+
+
+            <h2>Bienvenue, enquêtrice.</h2>
+
+
+            <p>
+                Une nouvelle enquête vous a été confiée.
+                Plusieurs informations restent actuellement classifiées.
+            </p>
+
+
+            <p>
+                Votre mission commence maintenant.
+                Résolvez les différentes étapes de l'enquête afin de découvrir la vérité cachée derrière ce dossier.
+            </p>
+
+
+
+            <div class="informations">
+
+                <h3>Informations du dossier</h3>
+
+                <p>
+                    <strong>Statut :</strong> ENQUÊTE EN COURS
+                </p>
+
+                <p>
+                    <strong>Dossier actuel :</strong> 001
+                </p>
+
+                <p>
+                    <strong>Niveau d'accès :</strong> Niveau 1 - En attente d'activation
+                </p>
+
+            </div>
+
+
+
+            <!-- <a href="1/dossier-001.html" class="bouton">
+                Ouvrir le dossier
+            </a>-->
+
+
+
+        </section>
+
+
+
+
+
+        <section class="archives">
+
+
+            <h2>Archives A.N.A.N.A.S</h2>
+
+
+           
+
+
+             <!-- <a href="1/dossier-001.html">  📁 Dossier 001</a>-->
+             
+             <label for="reponseMission1">mot  (4 à 20 caractères)&nbsp;:</label>
+
+			<input
+				type="text"
+				id="reponseMission1"
+				name="reponse"
+				required
+				minlength="4"
+				maxlength="20"
+				size="10" />
+
+
+			<p id="messageMission1"> 
+			
+			</p>
+				<div class="archive ouverte">
+				<button id="btnMission1">Valider</button>
+                <p>
+                    Statut : 🔒 Accès refusé
+                </p>
+
+            </div>
+
+
+
+            <div class="archive verrouille">
+
+                🔒 Dossier 002
+
+                <p>
+                  <a href="#">Statut : Accès refusé</a>  
+                </p>
+
+            </div>
+
+
+
+            <div class="archive verrouille">
+
+                🔒 Dossier 003
+
+                <p>
+            <a href="#">Statut : Accès refusé</a>  
+                </p>
+
+            </div>
+
+
+
+            <div class="archive verrouille">
+
+                🔒 Archives secrètes
+
+                <p>
+                    Statut : Niveau d'autorisation insuffisant
+                </p>
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+        <section class="progression">
+
+
+            <h3>Progression de l'enquête</h3>
+
+
+            <progress id="progression" max="100" value="1">
+                1%
+            </progress>
+
+
+            <p>
+                1 % terminé
+            </p>
+
+
+
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+
+    <footer>
+
+        <p>
+            © Dossier confidentiel A.N.A.N.A.S
+        </p>
+
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

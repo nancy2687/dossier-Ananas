@@ -1,0 +1,77 @@
+body {
+            margin: 0;
+            background-color: #0b0f14;
+            color: #d9e2f0;
+            font-family: "Courier New", monospace;
+        }
+
+header {
+            border-bottom: 2px solid #d9e2f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+.container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+.dossier {
+            border: 1px solid #d9e2f0;
+            padding: 25px;
+            background-color: #111820;
+        }
+
+.titre {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+.information {
+            margin: 10px 0;
+        }
+
+.statut {
+            padding: 10px;
+            border: 1px dashed #d9e2f0;
+            margin: 20px 0;
+        }
+
+.bloc {
+            margin-top: 30px;
+            padding: 15px;
+            border-left: 3px solid #d9e2f0;
+        }
+
+.secret {
+            color: #777;
+        }
+
+footer {
+            text-align: center;
+            margin: 50px;
+            font-size: 12px;
+        }
+.retour {
+    display: inline-block;
+    margin: 30px 0;
+    padding: 10px 20px;
+
+    color: #d9e2f0;
+    text-decoration: none;
+
+    border: 1px solid #d9e2f0;
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+.retour:hover {
+    background-color: #d9e2f0;
+    color: #0b0f14;
+}

@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #e8edf3;
+
+    color: #1e2935;
+
+    font-family: "Courier New", monospace;
+
+    min-height: 100vh;
+
+}
+
+
+
+/* HEADER */
+
+header {
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background-color: #ffffff;
+
+    border-bottom: 3px solid #1e2935;
+
+}
+
+
+header h1 {
+
+    margin: 0;
+
+    font-size: 35px;
+
+    letter-spacing: 3px;
+
+}
+
+
+header p {
+
+    margin: 10px 0;
+
+    color: #52606d;
+
+}
+
+
+
+/* CONTENU */
+
+main {
+
+    width: 85%;
+
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+}
+
+
+
+/* BLOCS DOSSIER */
+
+.dossier,
+.archives,
+.progression {
+
+    background-color: white;
+
+    border: 2px solid #9aa8b8;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+}
+
+
+
+h2 {
+
+    margin-top: 0;
+
+    border-bottom: 2px solid #9aa8b8;
+
+    padding-bottom: 10px;
+
+}
+
+
+h3 {
+
+    color: #334155;
+
+}
+
+
+
+/* INFORMATIONS */
+
+.informations {
+
+    margin: 30px 0;
+
+    padding: 20px;
+
+    background-color: #f4f6f8;
+
+    border-left: 5px solid #334155;
+
+}
+
+
+
+.informations p {
+
+    margin: 12px 0;
+
+}
+
+
+
+/* BOUTON */
+
+.bouton {
+
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    margin-top: 15px;
+
+    background-color: #334155;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+
+}
+
+
+
+.bouton:hover {
+
+    background-color: #1e2935;
+
+}
+
+
+
+/* ARCHIVES */
+
+.archive {
+
+    padding: 15px;
+
+    margin: 15px 0;
+
+    border: 1px solid #cbd5e1;
+
+    background-color: #f8fafc;
+
+}
+
+
+
+.archive.ouverte {
+
+    border-left: 5px solid #22c55e;
+
+}
+
+
+
+.archive.verrouille {
+
+    opacity: 0.55;
+
+}
+
+
+
+/* PROGRESSION */
+
+progress {
+
+    width: 100%;
+
+    height: 25px;
+
+}
+
+
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+
+/* TELEPHONE */
+
+@media screen and (max-width: 600px) {
+
+
+    main {
+
+        width: 92%;
+
+    }
+
+
+    header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .dossier,
+    .archives,
+    .progression {
+
+        padding: 20px;
+
+    }
+
+}
