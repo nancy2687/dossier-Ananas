@@ -1,3 +1,4 @@
+```javascript
 // ================================
 // DOSSIER A.N.A.N.A.S. - PROGRESSION
 // ================================
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ? progression.parentElement.querySelector("p")
             : null;
 
+    // MISSION 001
     const bouton =
         document.getElementById("btnMission1");
 
@@ -31,8 +33,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const champReponse =
         document.getElementById("reponseMission1");
 
+    // MISSION 002
+    const bouton2 =
+        document.getElementById("btnMission2");
+
+    const message2 =
+        document.getElementById("messageMission2");
+
+    const champReponse2 =
+        document.getElementById("reponseMission2");
+
+    // DOSSIERS
     const dossier001 =
-        document.querySelector(".archive.ouverte");
+        document.querySelector(".archive.dossier001");
+
+    const dossier002 =
+        document.querySelector(".archive.dossier002");
 
 
     // ========================================
@@ -40,66 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // ========================================
 
     const missions = [
-        {
-            numero: "001",
-            date: "2026-10-15",
-            niveau: 1
-        },
-        {
-            numero: "002",
-            date: "2026-11-15",
-            niveau: 2
-        },
-        {
-            numero: "003",
-            date: "2026-12-15",
-            niveau: 3
-        },
-        {
-            numero: "004",
-            date: "2027-01-15",
-            niveau: 4
-        },
-        {
-            numero: "005",
-            date: "2027-02-15",
-            niveau: 5
-        },
-        {
-            numero: "006",
-            date: "2027-03-15",
-            niveau: 6
-        },
-        {
-            numero: "007",
-            date: "2027-04-15",
-            niveau: 7
-        },
-        {
-            numero: "008",
-            date: "2027-05-15",
-            niveau: 8
-        },
-        {
-            numero: "009",
-            date: "2027-06-15",
-            niveau: 9
-        },
-        {
-            numero: "010",
-            date: "2027-07-15",
-            niveau: 10
-        },
-        {
-            numero: "011",
-            date: "2027-09-15",
-            niveau: 11
-        },
-        {
-            numero: "012",
-            date: "2027-10-15",
-            niveau: 12
-        }
+        { numero: "001", date: "2026-10-15", niveau: 1 },
+        { numero: "002", date: "2026-11-15", niveau: 2 },
+        { numero: "003", date: "2026-12-15", niveau: 3 },
+        { numero: "004", date: "2027-01-15", niveau: 4 },
+        { numero: "005", date: "2027-02-15", niveau: 5 },
+        { numero: "006", date: "2027-03-15", niveau: 6 },
+        { numero: "007", date: "2027-04-15", niveau: 7 },
+        { numero: "008", date: "2027-05-15", niveau: 8 },
+        { numero: "009", date: "2027-06-15", niveau: 9 },
+        { numero: "010", date: "2027-07-15", niveau: 10 },
+        { numero: "011", date: "2027-09-15", niveau: 11 },
+        { numero: "012", date: "2027-10-15", niveau: 12 }
     ];
 
 
@@ -159,19 +127,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const dateMission =
                 new Date(mission.date + "T00:00:00");
 
-
-            // La date est atteinte
             if (aujourdHui >= dateMission) {
 
-                // Si c'est la première mission
                 if (i === 0) {
 
                     missionActuelle = mission;
 
                 }
 
-                // Pour les suivantes :
-                // la mission précédente doit être terminée
                 else if (
                     missionTerminee(
                         missions[i - 1].numero
@@ -208,14 +171,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 (nombreTerminees / totalMissions) * 100
             );
 
-
         if (progression) {
 
-            progression.value =
-                pourcentage;
+            progression.value = pourcentage;
 
         }
-
 
         if (texteProgression) {
 
@@ -236,11 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const mission =
             determinerMissionActuelle();
 
-
-        // ------------------------------------
-        // AUCUNE MISSION DISPONIBLE
-        // ------------------------------------
-
         if (!mission) {
 
             if (dossierActuel) {
@@ -248,18 +203,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (niveauAcces) {
-                niveauAcces.textContent =
-                    "Aucun accès";
+                niveauAcces.textContent = "Aucun accès";
             }
 
             return;
 
         }
-
-
-        // ------------------------------------
-        // DOSSIER ACTUEL
-        // ------------------------------------
 
         if (dossierActuel) {
 
@@ -267,11 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 mission.numero;
 
         }
-
-
-        // ------------------------------------
-        // NIVEAU D'ACCÈS
-        // ------------------------------------
 
         if (niveauAcces) {
 
@@ -309,6 +253,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ========================================
+    // AFFICHER LE DOSSIER 002
+    // ========================================
+
+    function afficherMission2Terminee() {
+
+        if (dossier002) {
+
+            dossier002.innerHTML = `
+                📁 Dossier 002
+
+                <p>
+                    <a href="2/dossier-002.html">
+                        Statut : 🟢 Accès autorisé
+                    </a>
+                </p>
+            `;
+
+        }
+
+    }
+
+
+    // ========================================
     // INITIALISATION
     // ========================================
 
@@ -329,6 +296,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ========================================
+    // RESTAURATION MISSION 002
+    // ========================================
+
+    if (missionTerminee("002")) {
+
+        afficherMission2Terminee();
+
+    }
+
+
+    // ========================================
     // VALIDATION MISSION 001
     // ========================================
 
@@ -341,27 +319,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     .trim()
                     .toUpperCase();
 
-
-            // ====================================
-            // BONNE RÉPONSE
-            // ====================================
-
             if (reponseMission1 === "ARCHIVES") {
 
-                // Enregistrer la mission
                 localStorage.setItem(
                     "ananas_mission001",
                     "terminee"
                 );
 
-
-                // Affichage immédiat
                 afficherMission1Terminee();
 
                 afficherDossierActuel();
 
                 afficherProgression();
-
 
                 if (message) {
 
@@ -370,17 +339,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }
 
-
-                // Ouvrir le dossier
                 window.location.href =
                     "1/dossier-001.html";
 
             }
-
-
-            // ====================================
-            // MAUVAISE RÉPONSE
-            // ====================================
 
             else {
 
@@ -397,4 +359,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    // ========================================
+    // VALIDATION MISSION 002
+    // ========================================
+
+    if (bouton2) {
+
+        bouton2.addEventListener("click", () => {
+
+            const reponseMission2 =
+                champReponse2.value
+                    .trim()
+                    .toUpperCase();
+
+            if (reponseMission2 === "R") {
+
+                localStorage.setItem(
+                    "ananas_mission002",
+                    "terminee"
+                );
+
+                afficherMission2Terminee();
+
+                afficherDossierActuel();
+
+                afficherProgression();
+
+                if (message2) {
+
+                    message2.textContent =
+                        "Accès confirmé. Dossier 002 déverrouillé.";
+
+                }
+
+                window.location.href =
+                    "2/dossier-002.html";
+
+            }
+
+            else {
+
+                if (message2) {
+
+                    message2.textContent =
+                        "ERREUR : Mauvaise réponse, Dossier verrouillé";
+
+                }
+
+            }
+
+        });
+
+    }
+
 });
+```
