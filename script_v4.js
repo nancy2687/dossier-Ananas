@@ -1,4 +1,4 @@
-```javascript
+
 // ================================
 // DOSSIER A.N.A.N.A.S. - PROGRESSION
 // ================================
@@ -414,4 +414,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-```
