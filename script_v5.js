@@ -152,43 +152,54 @@ document.addEventListener("DOMContentLoaded", () => {
        AFFICHAGE DES DOSSIERS
     ====================================== */
 
-    function afficherDossiers() {
+   
+function afficherDossiers() {
 
-        missions.forEach((mission, index) => {
+    missions.forEach((mission, index) => {
 
-            const dossier = document.querySelector(
-                `.dossier-${mission.numero}`
-            );
+        const dossier = document.querySelector(
+            `.dossier-${mission.numero}`
+        );
 
-            if (!dossier) return;
+        if (!dossier) return;
 
-            const termine = missionTerminee(mission.numero);
-            const accessible = missionAccessible(index);
+        const termine = missionTerminee(mission.numero);
+        const accessible = missionAccessible(index);
 
-            dossier.classList.toggle("termine", termine);
-            dossier.classList.toggle("accessible", accessible);
-            dossier.classList.toggle("verrouille", !accessible );
+        dossier.classList.toggle("termine", termine);
+        dossier.classList.toggle("accessible", accessible);
+        dossier.classList.toggle("verrouille", !accessible && !termine);
 
-            const lien = dossier.querySelector("a");
+        // Gestion du lien vers le dossier
+        const lien = dossier.querySelector("a");
 
-            if (lien) {
-                if (termine && mission.lien) {
-                    lien.href = mission.lien ;
-                   lien.textContent = "Consulter le dossier";
-                   lien.style.pointerEvents = "auto";
-                } else if(accessible && mission.lien){
-                   lien.href = mission.lien;
-                   lien.textContent = "Accéder au dossier";
-                   lien.style.pointerEvents = "auto";
-                }else{
-                   lien.removeAttribute("href");
-                   lien.textContent = "Acces Refusé ";
-                   lien.style.pointerEvents = "auto";
+        if (lien) {
 
-                }
+            if (termine && mission.lien) {
+                lien.href = mission.lien;
+                lien.textContent = "Consulter le dossier";
+                lien.hidden = false;
+            } else {
+                lien.removeAttribute("href");
+                lien.hidden = true;
             }
-        });
-    }
+        }
+
+        // Gestion du formulaire de réponse
+        const champ = dossier.querySelector("input");
+        const bouton = dossier.querySelector("button");
+
+        if (champ) {
+            champ.disabled = !accessible || termine;
+        }
+
+        if (bouton) {
+            bouton.disabled = !accessible || termine;
+        }
+
+    });
+}
+
 
     /* ======================================
        VALIDATION D'UNE MISSION
