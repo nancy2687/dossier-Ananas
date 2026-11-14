@@ -22,6 +22,14 @@ body {
 
 /* HEADER */
 
+header img{
+	width : 90px;
+	height: auto;
+	display: block;
+	margin: 0 auto 15px;
+	object-fit: contain;
+}
+
 header {
 
     text-align: center;
