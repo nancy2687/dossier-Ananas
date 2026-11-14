@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     lien.href = mission.lien ;
                    lien.textContent = "Consulter le dossier";
                    lien.style.pointerEvents = "auto";
-                } else if{
+                } else if(accessible && mission.lien){
                    lien.href = mission.lien;
                    lien.textContent = "Accéder au dossier";
                    lien.style.pointerEvents = "auto";
