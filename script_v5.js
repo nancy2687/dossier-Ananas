@@ -167,15 +167,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             dossier.classList.toggle("termine", termine);
             dossier.classList.toggle("accessible", accessible);
-            dossier.classList.toggle("verrouille", !accessible && !termine);
+            dossier.classList.toggle("verrouille", !accessible );
 
             const lien = dossier.querySelector("a");
 
             if (lien) {
-                if (termine || accessible) {
-                    lien.href = mission.lien || "#";
-                } else {
-                    lien.removeAttribute("href");
+                if (termine && mission.lien) {
+                    lien.href = mission.lien ;
+                   lien.textContent = "Consulter le dossier";
+                   lien.style.pointerEvents = "auto";
+                } else if{
+                   lien.href = mission.lien;
+                   lien.textContent = "Accéder au dossier";
+                   lien.style.pointerEvents = "auto";
+                }else{
+                   lien.removeAttribute("href");
+                   lien.textContent = "Acces Refusé ";
+                   lien.style.pointerEvents = "auto";
+
                 }
             }
         });
@@ -243,6 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (message) {
             message.textContent = "Mission déjà validée.";
+           
         }
     }
 
